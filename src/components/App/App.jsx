@@ -85,7 +85,7 @@ Tables:
 
 ![Markdown logo](https://i.ibb.co/8mYHJ3W/iconfinder-205-Markdown-logo-logos-4373658-1.png)
 ---
-Click [the link](#) for source code.
+Click the link to view [source code](https://github.com/jeremy-ebinum/fcc-markdown-previewer)
 `;
 
 const App = () => {
