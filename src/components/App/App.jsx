@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 import "./App.scss";
+import HelpModal from "../HelpModal/HelpModal";
 
 const sanitizer = dompurify.sanitize;
 
@@ -17,7 +18,6 @@ marked.setOptions({
     const validLanguage = hljs.getLanguage(language) ? language : "plaintext";
     return hljs.highlight(validLanguage, code).value;
   },
-  langPrefix: "language-",
   pedantic: false,
   gfm: true,
   breaks: true,
@@ -91,6 +91,10 @@ Click [the link](#) for source code.
 const App = () => {
   const [markdown, setMarkdown] = useState(placeholder);
   const [output, setOutput] = useState(marked(markdown));
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const editorRef = useRef();
 
@@ -103,7 +107,9 @@ const App = () => {
       <Row className="py-4">
         <Col xs={12} className="my-4">
           <h1 className="heading text-center text-light">Markdown Previewer</h1>
-          <Button variant="info">Help</Button>
+          <Button variant="info" onClick={handleShow}>
+            Help
+          </Button>
         </Col>
         <Col xs={12} lg={6} className="mb-3">
           <div className="header">Editor</div>
@@ -129,6 +135,8 @@ const App = () => {
           />
         </Col>
       </Row>
+
+      <HelpModal show={show} handleClose={handleClose} />
     </Container>
   );
 };
