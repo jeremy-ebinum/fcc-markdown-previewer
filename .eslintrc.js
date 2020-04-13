@@ -8,6 +8,7 @@ module.exports = {
     node: true,
   },
   rules: {
+    "no-console": 0,
     "func-names": ["warn", "as-needed"],
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-filename-extension": ["warn", { extensions: [".js", ".jsx"] }],

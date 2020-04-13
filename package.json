@@ -42,6 +42,9 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.5",
+    "dompurify": "^2.0.8",
+    "highlight.js": "^9.18.1",
+    "marked": "^0.8.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-dom": "^16.13.1",
